@@ -860,7 +860,7 @@ class DefaultAssetPickerBuilderDelegate
     BuildContext context,
     int index,
     AssetEntity currentAsset,
-    RouteSettings settings,
+    RouteSettings routeSetting,
   ) async {
     final DefaultAssetPickerProvider provider =
         context.read<DefaultAssetPickerProvider>();
@@ -911,7 +911,7 @@ class DefaultAssetPickerBuilderDelegate
       specialPickerType: specialPickerType,
       maxAssets: provider.maxAssets,
       shouldReversePreview: isAppleOS,
-      routeSettings: settings,
+      routeSettings: routeSetting,
     );
     if (result != null) {
       Navigator.of(context).maybePop(result);

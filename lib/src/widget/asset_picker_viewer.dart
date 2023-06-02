@@ -39,7 +39,7 @@ class AssetPickerViewer<Asset, Path> extends StatefulWidget {
     List<AssetEntity>? selectedAssets,
     SpecialPickerType? specialPickerType,
     int? maxAssets,
-    RouteSettings? routeSettings,
+    required RouteSettings? routeSettings,
     bool shouldReversePreview = false,
     AssetSelectPredicate<AssetEntity>? selectPredicate,
   }) async {

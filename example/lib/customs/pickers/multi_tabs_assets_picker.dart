@@ -168,6 +168,7 @@ class _MultiTabAssetPickerState extends State<MultiTabAssetPicker> {
         selectedAssets: entities,
         themeData: theme,
         maxAssets: maxAssets,
+        routeSettings: null,
       );
       if (result != null) {
         entities = result;

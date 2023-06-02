@@ -103,6 +103,7 @@ class AssetPickerDelegate {
         textDelegate: pickerConfig.textDelegate,
         themeColor: pickerConfig.themeColor,
         locale: Localizations.maybeLocaleOf(context),
+        routeSettings: routeSettings,
       ),
     );
     final List<AssetEntity>? result = await Navigator.of(
@@ -111,7 +112,9 @@ class AssetPickerDelegate {
     ).push<List<AssetEntity>>(
       pageRouteBuilder?.call(picker) ??
           AssetPickerPageRoute<List<AssetEntity>>(
-              settings: routeSettings, builder: (_) => picker),
+            settings: routeSettings,
+            builder: (_) => picker,
+          ),
     );
     return result;
   }

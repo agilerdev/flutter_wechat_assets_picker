@@ -16,12 +16,14 @@ class SelectedAssetsListView extends StatelessWidget {
     required this.isDisplayingDetail,
     required this.onResult,
     required this.onRemoveAsset,
+    required this.routeSettings,
   });
 
   final List<AssetEntity> assets;
   final ValueNotifier<bool> isDisplayingDetail;
   final void Function(List<AssetEntity>? result) onResult;
   final void Function(int index) onRemoveAsset;
+  final RouteSettings? routeSettings;
 
   Widget _selectedAssetWidget(BuildContext context, int index) {
     final AssetEntity asset = assets.elementAt(index);
@@ -36,6 +38,7 @@ class SelectedAssetsListView extends StatelessWidget {
               currentIndex: index,
               previewAssets: assets,
               themeData: AssetPicker.themeData(themeColor),
+              routeSettings: routeSettings,
             );
             onResult(result);
           }

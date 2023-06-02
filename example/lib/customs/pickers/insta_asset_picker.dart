@@ -182,6 +182,7 @@ class _InstaAssetPickerState extends State<InstaAssetPicker> {
         themeData: theme,
         selectorProvider: provider,
         maxAssets: maxAssets,
+        routeSettings: null,
       );
       if (result != null) {
         entities = result;

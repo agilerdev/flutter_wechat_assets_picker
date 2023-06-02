@@ -81,6 +81,7 @@ mixin ExamplePageMixin<T extends StatefulWidget> on State<T> {
             isDisplayingDetail: isDisplayingDetail,
             onResult: onResult,
             onRemoveAsset: removeAsset,
+            routeSettings: ModalRoute.of(context)?.settings,
           ),
       ],
     );

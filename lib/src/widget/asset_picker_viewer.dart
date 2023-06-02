@@ -70,7 +70,9 @@ class AssetPickerViewer<Asset, Path> extends StatefulWidget {
         PageRouteBuilder<List<AssetEntity>>(
       settings: routeSettings ??
           const RouteSettings(
-              name: 'imagePreview', arguments: ScreenOrientation.portraitOnly),
+            name: 'imagePreview',
+            arguments: ScreenOrientation.rotating,
+          ),
       pageBuilder: (_, __, ___) => viewer,
       transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
         return FadeTransition(opacity: animation, child: child);

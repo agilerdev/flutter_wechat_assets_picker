@@ -1356,11 +1356,15 @@ class DefaultAssetPickerBuilderDelegate
               onTap: () => selectAsset(context, asset, index, isSelected),
               onTapHint: semanticsTextDelegate.sActionSelectHint,
               onLongPress: isPreviewEnabled
-               
-                  ? () => viewAsset(context, index, asset,  routeSettings ??
+                  ? () => viewAsset(
+                        context,
+                        index,
+                        asset,
+                        routeSettings ??
                             const RouteSettings(
-                              arguments: ScreenOrientation.landscapeOnly,
-                            ),)
+                              arguments: ScreenOrientation.rotating,
+                            ),
+                      )
                   : null,
               onLongPressHint: semanticsTextDelegate.sActionPreviewHint,
               selected: isSelected,
@@ -1373,11 +1377,15 @@ class DefaultAssetPickerBuilderDelegate
                 // Regression https://github.com/flutter/flutter/issues/35112.
                 onLongPress:
                     isPreviewEnabled && context.mediaQuery.accessibleNavigation
-                   
-                        ? () => viewAsset(context, index, asset,  routeSettings ??
+                        ? () => viewAsset(
+                              context,
+                              index,
+                              asset,
+                              routeSettings ??
                                   const RouteSettings(
-                                    arguments: ScreenOrientation.landscapeOnly,
-                                  ),)
+                                    arguments: ScreenOrientation.rotating,
+                                  ),
+                            )
                         : null,
                 child: IndexedSemantics(
                   index: semanticIndex(index),
@@ -2083,11 +2091,17 @@ class DefaultAssetPickerBuilderDelegate
     final double indicatorSize = context.mediaQuery.size.width / gridCount / 3;
     return Positioned.fill(
       child: GestureDetector(
-
-        onTap: isPreviewEnabled ? () => viewAsset(context, index, asset,  routeSettings ??
+        onTap: isPreviewEnabled
+            ? () => viewAsset(
+                  context,
+                  index,
+                  asset,
+                  routeSettings ??
                       const RouteSettings(
-                        arguments: ScreenOrientation.landscapeOnly,
-                      ),) : null,
+                        arguments: ScreenOrientation.rotating,
+                      ),
+                )
+            : null,
         child: Consumer<DefaultAssetPickerProvider>(
           builder: (_, DefaultAssetPickerProvider p, __) {
             final int index = p.selectedAssets.indexOf(asset);

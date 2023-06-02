@@ -82,6 +82,7 @@ class TestAssetPickerDelegate extends AssetPickerDelegate {
     AssetPickerConfig pickerConfig = const AssetPickerConfig(),
     bool useRootNavigator = true,
     AssetPickerPageRouteBuilder<List<AssetEntity>>? pageRouteBuilder,
+    RouteSettings? routeSettings,
   }) async {
     final PermissionState ps = await permissionCheck();
     final AssetPathEntity pathEntity = AssetPathEntity(

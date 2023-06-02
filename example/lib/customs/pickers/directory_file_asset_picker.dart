@@ -393,6 +393,7 @@ class FileAssetPickerBuilder
     BuildContext context,
     int index,
     AssetEntity currentAsset,
+    RouteSettings? routeSettings,
   ) async {
     final List<File>? result = await Navigator.of(context).push<List<File>?>(
       PageRouteBuilder<List<File>>(

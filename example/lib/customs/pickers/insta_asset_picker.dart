@@ -366,6 +366,7 @@ class InstaAssetPickerBuilder extends DefaultAssetPickerBuilderDelegate {
     BuildContext context,
     int index,
     AssetEntity currentAsset,
+    RouteSettings? routeSettings,
   ) async {
     // if is preview asset, unselect it
     if (provider.selectedAssets.isNotEmpty &&
@@ -705,7 +706,7 @@ class InstaAssetPickerBuilder extends DefaultAssetPickerBuilderDelegate {
         return Positioned.fill(
           child: GestureDetector(
             onTap: isPreviewEnabled
-                ? () => viewAsset(context, index, asset)
+                ? () => viewAsset(context, index, asset, null)
                 : null,
             child: AnimatedContainer(
               duration: switchingPathDuration,

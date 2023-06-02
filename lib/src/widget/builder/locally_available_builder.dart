@@ -1,7 +1,7 @@
-///
-/// [Author] Alex (https://github.com/AlexV525)
-/// [Date] 2021/7/23 16:07
-///
+// Copyright 2019 The FlutterCandies author. All rights reserved.
+// Use of this source code is governed by an Apache license that can be found
+// in the LICENSE file.
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -13,18 +13,18 @@ import '../scale_text.dart';
 
 class LocallyAvailableBuilder extends StatefulWidget {
   const LocallyAvailableBuilder({
-    Key? key,
+    super.key,
     required this.asset,
     required this.builder,
     this.isOriginal = true,
-  }) : super(key: key);
+  });
 
   final AssetEntity asset;
   final Widget Function(BuildContext context, AssetEntity asset) builder;
   final bool isOriginal;
 
   @override
-  _LocallyAvailableBuilderState createState() =>
+  State<LocallyAvailableBuilder> createState() =>
       _LocallyAvailableBuilderState();
 }
 
@@ -97,7 +97,7 @@ class _LocallyAvailableBuilderState extends State<LocallyAvailableBuilder> {
                 ScaleText(
                   '  iCloud ${(progress * 100).toInt()}%',
                   style: TextStyle(
-                    color: context.themeData.textTheme.bodyText2?.color
+                    color: context.themeData.textTheme.bodyMedium?.color
                         ?.withOpacity(.4),
                   ),
                 ),

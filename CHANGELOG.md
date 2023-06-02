@@ -1,4 +1,216 @@
+<!-- Copyright 2019 The FlutterCandies author. All rights reserved.
+Use of this source code is governed by an Apache license
+that can be found in the LICENSE file. -->
+
 # Changelog
+
+## 8.5.0
+
+### Breaking changes
+
+- Migrate to Flutter 3.10, drop supports for previous Flutter versions.
+
+## 8.4.3
+
+### New features
+
+- Add Vietnamese language text delegate. (#424).
+
+### Improvements
+
+- Expand `FilterOptionGroup` to `PMFilter`. (#436)
+
+## 8.4.2
+
+### Fixes
+
+- Avoid clearing selected assets when disposing the provider. (#428)
+
+## 8.4.1
+
+### Fixes
+
+- Call `AssetPickerProvider.dispose` when disposing the builder delegate. (#421)
+
+## 8.4.0
+
+### Breaking changes
+
+- Migrate to Flutter 3.7, drop supports for previous Flutter versions.
+
+## 8.3.2+1
+
+### Improvements
+
+- Add more assertions. (#411)
+
+## 8.3.2
+
+### Fixes
+
+- Use `Completer` and more accurate conditions to avoid duplicate load assets
+  when `AssetPickerConfig.pageSize` is smaller than a complete page. (#407)
+
+## 8.3.1+1
+
+### Improvements
+
+- Fix images and descriptions in `README`s.
+
+## 8.3.1
+
+### New features
+
+- Add `didUpdateViewer` and `initAnimations` in the `AssetPickerViewerBuilderDelegate`. (#403)
+- Add insta_assets_picker as an custom delegate example. (#403)
+
+## 8.3.0
+
+### New features
+
+- Add `index` argument to `selectAsset` in the `AssetPickerBuilderDelegate`. (#399)
+
+### Improvements
+
+- Improve UI details in the `AssetPickerAppBar`. (#400)
+
+## 8.2.0
+
+### New features
+
+- Allow overrides `viewAsset` in the `AssetPickerBuilderDelegate`. (#391)
+
+### Fixes
+
+- Correct behaviors when the access is limited on iOS. (#392)
+
+## 8.1.4
+
+### Fixes
+
+- Fix conditions with the confirm button on iOS. (#376)
+
+## 8.1.3
+
+### Improvements
+
+- Bump `photo_manager` to explicitly remove the requirements of `requiredLegacyExternalStorage`.
+
+## 8.1.2
+
+### Fixes
+
+- Fix conditions with the confirm button. (#371)
+
+## 8.1.1
+
+### Fixes
+
+- Fix conditions with the confirm button. (#367)
+
+## 8.1.0
+
+### New features
+
+- Upgrade `photo_manager` for Android 13. (#365)
+
+### Improvements
+
+- Improve `BuildContext` usages to obtain the correct directionality for the assets grid. (#359)
+- Provide a better condition to the confirm button
+  to make sure it displays correctly in all cases on iOS/macOS. (#359)
+- Improve `bottomActionBar` in `DefaultAssetPickerBuilderDelegate`. (#359)
+
+### Fixes
+
+- Fix invalid path sort. (#364)
+
+## 8.0.2
+
+### Improvements
+
+- Adapt Flutter 3.3. (#354)
+
+## 8.0.1
+
+### Fixes
+
+- Fix not updated empty flag in `DefaultAssetPickerProvider`. (#353)
+
+## 8.0.0
+
+To know more about breaking changes, see [Migration Guide][].
+
+### New Features
+
+- Introduce `PathWrapper` in delegates to improve the overall loading speed. (#338)
+- Allow using `Key` during picking. (#339)
+- Add `initializeDelayDuration` for `DefaultAssetPickerProvider`. (#341)
+- Prevent race condition with paths. (#342)
+- Expose `sortPathsByModifiedDate`. (#343)
+
+### Fixes
+
+- Unify indicators usage to avoid accidentally indicator switching. (#344)
+
+## 7.3.2
+
+### Improvements
+
+- Improve `onChangingSelected` in `AssetPickerViewerBuilderDelegate`. (#332)
+- Fix typo in `README.md`. (#333)
+
+### Fixes
+
+- Fix behaviors when unselecting all assets in the viewer. (#335)
+
+## 7.3.1
+
+### Improvements
+
+- Improve selection callers between picker and viewer. (#327)
+
+## 7.3.0
+
+### Breaking changes
+
+- Migrate to Flutter 3, drop supports for previous Flutter versions.
+
+## 7.2.0
+
+### New features
+
+- Separate `AssetPickerDelegate` (#315),
+  which provides the ability to override methods within the `AssetPicker`.
+
+### Improvements
+
+- Improve `specialItemBuilder`. (#314)
+
+## 7.1.2
+
+### Fixes
+
+- Fix context usages for inherited theme data.
+- Fix unlinked path name builder.
+
+### Improvements
+
+- Update how paths get update. (#312)
+- Expose `DefaultAssetPickerProvider.forTest`.
+
+## 7.1.1
+
+### Fixes
+
+- Fix `selectPredicate` with the viewer. (#307)
+
+## 7.1.0
+
+### New features
+
+- Add `PathNameBuilder`. (#303)
+- Add `LimitedPermissionOverlayPredicate`. (#287)
 
 ## 7.0.5
 
@@ -331,7 +543,7 @@ To know more about breaking changes, see [Migration Guide][].
 
 - Make widgets constant.
 - Remove system ui overlays update.
-- Migrate files to compatible with Flutter `1.20.0` .
+- Migrate files to compatible with Flutter `1.20.0`.
 - Sync analysis options.
 
 ## 4.1.0+2
@@ -356,7 +568,7 @@ To know more about breaking changes, see [Migration Guide][].
 
 ### Breaking changes
 
-- `TextDelegate` -> `AssetsPickerTextDelegate` .
+- `TextDelegate` -> `AssetsPickerTextDelegate`.
 
 ## 3.0.0+1
 
@@ -364,15 +576,15 @@ To know more about breaking changes, see [Migration Guide][].
 
 ## 3.0.0
 
-- Add `FilterOptionGroup`. Fix #41 .
-- Add `SpecialPickerType`. Fix #37 .
-- Add custom item build mode. Fix #39 .
+- Add `FilterOptionGroup`. (#41)
+- Add `SpecialPickerType`. (#37)
+- Add custom item build mode. (#39)
 
 ## 2.2.1
 
-- Introduce `ColorScheme` for theme details. Fixed #32 .
+- Introduce `ColorScheme` for theme details. (#32)
 - Enhance RTL compatibility.
-- Enlarge select indicator's size. Related to #33 .
+- Enlarge select indicator's size. (#33)
 
 ## 2.2.0+2
 
@@ -384,7 +596,7 @@ To know more about breaking changes, see [Migration Guide][].
 
 ## 2.2.0
 
-- A brand new example.
+- A brand-new example.
 - Add `SortPathDelegate`.
 - Using zoom page transition for viewer.
 - Slightly add padding to viewer's assets list view.
@@ -397,14 +609,14 @@ To know more about breaking changes, see [Migration Guide][].
 ## 2.1.0
 
 - Add present english text delegate.
-- Refactored theme constructor and getter with theme capability #22 .
-- Update color scheme usage for assets grid #23 .
-- Update picker viewer style for apple OS.
-- Fix bottom bar disappearing on apple os when it's single asset mode.
+- Refactored theme constructor and getter with theme capability. (#22)
+- Update color scheme usage for assets grid. (#23)
+- Update picker viewer style for Apple OS.
+- Fix bottom bar disappearing on Apple OS when it's single asset mode.
 
 ## 2.0.2
 
-- Fix audio paused accidentally when the app is launching on Android #18 .
+- Fix audio paused accidentally when the app is launching on Android. (#18)
 
 ## 2.0.1
 
@@ -424,11 +636,11 @@ To know more about breaking changes, see [Migration Guide][].
 ## 1.7.0
 
 - Hide detail display when video start to play.
-- Switch to `ExtendedImageGesturePageView`. Fix #16 .
+- Switch to `ExtendedImageGesturePageView`. (#16)
 - Add fully theme support.
-- Add MacOS support.
-- Add delay for the first init method to prevent stuck in page routing. Fix #13 .
-- Update widgets style on iOS. Fix #14 .
+- Add macOS support.
+- Add delay for the first init method to prevent stuck in page routing. (#13)
+- Update widgets style on iOS. (#14)
 - Fix state of the example not updated after the result was returned without input method activated.
 
 ## 1.6.0

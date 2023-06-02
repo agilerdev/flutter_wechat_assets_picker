@@ -1,7 +1,7 @@
-///
-/// [Author] Alex (https://github.com/Alex525)
-/// [Date] 2020/4/7 10:25
-///
+// Copyright 2019 The FlutterCandies author. All rights reserved.
+// Use of this source code is governed by an Apache license that can be found
+// in the LICENSE file.
+
 import 'dart:io' show Platform;
 
 import 'package:flutter/rendering.dart';
@@ -18,6 +18,7 @@ const List<AssetPickerTextDelegate> assetPickerTextDelegates =
   JapaneseAssetPickerTextDelegate(),
   ArabicAssetPickerTextDelegate(),
   FrenchAssetPickerTextDelegate(),
+  VietnameseAssetPickerTextDelegate(),
 ];
 
 /// Obtain the text delegate from the given locale.
@@ -105,10 +106,10 @@ class AssetPickerTextDelegate {
   String durationIndicatorBuilder(Duration duration) {
     const String separator = ':';
     final String minute = duration.inMinutes.toString().padLeft(2, '0');
-    final String second =
-        ((duration - Duration(minutes: duration.inMinutes)).inSeconds)
-            .toString()
-            .padLeft(2, '0');
+    final String second = (duration - Duration(minutes: duration.inMinutes))
+        .inSeconds
+        .toString()
+        .padLeft(2, '0');
     return '$minute$separator$second';
   }
 
@@ -786,7 +787,7 @@ class FrenchAssetPickerTextDelegate extends AssetPickerTextDelegate {
 
   @override
   String get unableToAccessAll =>
-      'Impossible d\'accéder aux médias de votre appareil';
+      "Impossible d'accéder aux médias de votre appareil";
 
   @override
   String get viewingLimitedAssetsTip =>
@@ -845,100 +846,98 @@ class FrenchAssetPickerTextDelegate extends AssetPickerTextDelegate {
   String get sUnitAssetCountLabel => 'quantité';
 }
 
-/// [AssetPickerTextDelegate] implements with English.
-/// English Localization
-class SpanishAssetPickerTextDelegate extends AssetPickerTextDelegate {
-  const SpanishAssetPickerTextDelegate();
+/// [AssetPickerTextDelegate] implements with Vietnamese.
+/// Dịch tiếng Việt
+class VietnameseAssetPickerTextDelegate extends AssetPickerTextDelegate {
+  const VietnameseAssetPickerTextDelegate();
 
   @override
-  String get languageCode => 'es';
+  String get languageCode => 'vi';
 
   @override
-  String get confirm => 'Confirmar';
+  String get confirm => 'Xác nhận';
 
   @override
-  String get cancel => 'Cancelar';
+  String get cancel => 'Hủy';
 
   @override
-  String get edit => 'Editar';
+  String get edit => 'Chỉnh sửa';
 
   @override
   String get gifIndicator => 'GIF';
 
   @override
-  String get loadFailed => 'Carga fallida';
+  String get loadFailed => 'Tải thất bại';
 
   @override
-  String get original => 'Original';
+  String get original => 'Gốc';
 
   @override
-  String get preview => 'Vista previa';
+  String get preview => 'Xem trước';
 
   @override
-  String get select => 'Seleccionar';
+  String get select => 'Chọn';
 
   @override
-  String get emptyList => 'Lista vacía';
+  String get emptyList => 'Danh sách trống';
 
   @override
-  String get unSupportedAssetType => 'Tipo de activo HEIC no admitido.';
+  String get unSupportedAssetType => 'Loại tệp không được hỗ trợ';
 
   @override
   String get unableToAccessAll =>
-      'No se puede acceder a todos los archivos en el dispositivo';
+      'Không thể truy cập vào các tệp trên thiết bị của bạn';
 
   @override
-  String get viewingLimitedAssetsTip =>
-      'Solo vea los archivos y los álbumes a los que puede acceder la aplicación.';
+  String get viewingLimitedAssetsTip => 'Đang xem các tệp và thư mục hạn chế';
 
   @override
   String get changeAccessibleLimitedAssets =>
-      'Haga clic para actualizar los archivos accesibles';
+      'Thay đổi quyền truy cập tệp hạn chế';
 
   @override
-  String get accessAllTip =>
-      'La aplicación solo puede acceder a algunos archivos en el dispositivo. '
-      'Vaya a la configuración del sistema y permita que la aplicación acceda a todos los archivos en el dispositivo.';
+  String get accessAllTip => 'Ứng dụng chỉ có thể truy cập một số tệp. '
+      'Hãy vào cài đặt hệ thống và cho phép ứng dụng truy cập tất cả các tệp trên thiết bị';
 
   @override
-  String get goToSystemSettings => 'Vaya a la configuración del sistema';
+  String get goToSystemSettings => 'Đi đến cài đặt hệ thống';
 
   @override
-  String get accessLimitedAssets => 'Continuar con acceso limitado';
+  String get accessLimitedAssets => 'Tiếp tục với quyền truy cập hạn chế';
 
   @override
-  String get accessiblePathName => 'Archivos accesibles';
+  String get accessiblePathName => 'Tệp truy cập';
 
   @override
-  String get sTypeAudioLabel => 'Audio';
+  String get sTypeAudioLabel => 'Âm thanh';
 
   @override
-  String get sTypeImageLabel => 'Imagen';
+  String get sTypeImageLabel => 'Hình ảnh';
 
   @override
   String get sTypeVideoLabel => 'Video';
 
   @override
-  String get sTypeOtherLabel => 'Otros archivos';
+  String get sTypeOtherLabel => 'Khác';
 
   @override
-  String get sActionPlayHint => 'reproducir';
+  String get sActionPlayHint => 'phát';
 
   @override
-  String get sActionPreviewHint => 'vista previa';
+  String get sActionPreviewHint => 'xem trước';
 
   @override
-  String get sActionSelectHint => 'seleccionar';
+  String get sActionSelectHint => 'chọn';
 
   @override
-  String get sActionSwitchPathLabel => 'cambiar de ruta';
+  String get sActionSwitchPathLabel => 'chuyển đổi đường dẫn';
 
   @override
-  String get sActionUseCameraHint => 'usar camara';
+  String get sActionUseCameraHint => 'Sử dụng máy ảnh';
 
   @override
-  String get sNameDurationLabel => 'duración';
+  String get sNameDurationLabel => 'thời lượng';
 
   @override
-  String get sUnitAssetCountLabel => 'cantidad';
+  String get sUnitAssetCountLabel => 'số lượng';
 }

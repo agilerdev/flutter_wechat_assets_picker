@@ -971,7 +971,7 @@ class SpanishAssetPickerTextDelegate extends AssetPickerTextDelegate {
   String get preview => 'Vista previa';
 
   @override
-  String get select => 'Seleccionar';
+  String get select => 'Elegir';
 
   @override
   String get emptyList => 'Lista vacía';
@@ -1020,7 +1020,7 @@ class SpanishAssetPickerTextDelegate extends AssetPickerTextDelegate {
   String get sActionPreviewHint => 'vista previa';
 
   @override
-  String get sActionSelectHint => 'seleccionar';
+  String get sActionSelectHint => 'elegir';
 
   @override
   String get sActionSwitchPathLabel => 'cambiar de ruta';
